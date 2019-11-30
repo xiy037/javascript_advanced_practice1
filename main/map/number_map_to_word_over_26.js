@@ -1,6 +1,17 @@
 'use strict';
 var number_map_to_word_over_26 = function(collection){
-  return ['a','m','aa','ad','y','aa'];
+  var result = collection.map(to_string);
+  return result;
 };
+
+function to_string(num) {
+  if (num < 27) {
+    return String.fromCharCode(num + 96);
+  } else {
+    var char1 = String.fromCharCode(Math.floor(num/26) + 96);
+    var char2 = String.fromCharCode((num - 1) % 26 + 97);
+    return char1.concat(char2);
+  }
+}
 
 module.exports = number_map_to_word_over_26;
