@@ -1,23 +1,31 @@
 function count_same_elements(collection) {
   var result = collection.reduce(function(counted, currVal){
-    var newObj = {};
     var keyArray = counted.map(function(element) {
       return element.key;
     }) 
     if (!keyArray.includes(currVal)) {
-      newObj.key = currVal;
-      newObj.count = 1;
-      counted.push(newObj)
+      createNewObj(counted, currVal);
     } else {
-      for (var i = 0; i < counted.length; i++) {
-        if (counted[i].key === currVal) {
-          counted[i].count++;
-        } 
-      }
+      increaseCount(counted, currVal);
     }
     return counted;
   },[]);
   return result;
+}
+
+function createNewObj(array, item) {
+  var newObj = {};
+  newObj.key = item;
+  newObj.count = 1;
+  return array.push(newObj);
+}
+
+function increaseCount(arr, item) {
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i].key === item) {
+      return arr[i].count++;
+    }
+  }
 }
 
 module.exports = count_same_elements;

@@ -1,32 +1,42 @@
 function count_same_elements(collection) {
   var result = collection.reduce(function (counted, currStr) {
-    var newObj = {};
     var nameArray = counted.map(function (element) {
       return element.name;
     })
     var currVal = currStr.match(/\w/).toString();
-    if (!nameArray.includes(currVal)) {
-      newObj.name = currVal;
-      if (currStr.match(/\d/)) {
-        newObj.summary = parseInt(currStr.match(/\d/));
-      } else {
-        newObj.summary = 1;
-      }
-      counted.push(newObj)
+    if (!nameArray.includes(currVal)) { 
+      createNewObj(counted, currStr);
     } else {
-      for (var i = 0; i < counted.length; i++) {
-        if (counted[i].name === currVal) {
-          if (currStr.match(/\d/)) {
-            counted[i].summary += parseInt((currStr.match(/\d/g)).join(""));
-          } else {
-            counted[i].summary++;
-          }
-        }
-      }
+      increaseCount(counted, currStr);
     }
     return counted;
   }, []);
   return result;
 }
+
+function createNewObj(array, item) {
+  var newObj = {};
+  newObj.name = item.match(/\w/).toString();
+  if (item.match(/\d/)) {
+    newObj.summary = parseInt(item.match(/\d/));
+  } else {
+    newObj.summary = 1;
+  }
+  return array.push(newObj);
+}
+
+function increaseCount(arr, item) {
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i].name === item.match(/\w/).toString()) {
+      if (item.match(/\d/)) {
+        arr[i].summary += parseInt((item.match(/\d/g)).join(""));
+      } else {
+        arr[i].summary++;
+      }
+    }
+  }
+  return arr;
+}
+
 
 module.exports = count_same_elements;
