@@ -1,8 +1,15 @@
 'use strict';
 
-function calculate_elements_sum(collection, element) {
-  //在这里写入代码
+function find_element_first_subscript(collection, element) {
+  var result = collection.reduce(function(sum, currVal, index) {
+    if (index === sum && currVal != element) {
+      return sum + 1;
+    } else {
+      return sum;
+    }
+  }, 0);
+  return result; 
 }
 
-module.exports = calculate_elements_sum;
+module.exports = find_element_first_subscript;
 

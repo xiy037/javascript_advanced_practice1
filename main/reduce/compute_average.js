@@ -1,7 +1,10 @@
 'use strict';
 
 function compute_average(collection) {
-  //在这里写入代码
+  var result = collection.reduce(function(average, element, index) {
+    return average = (average * index + element) / (index + 1);
+  });
+  return result;
 }
 
 module.exports = compute_average;

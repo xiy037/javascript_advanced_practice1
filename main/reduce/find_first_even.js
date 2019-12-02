@@ -1,7 +1,14 @@
 'use strict';
 
 function find_first_even(collection) {
-  //在这里写入代码
+var result = collection.reduce(function(even, element) {
+  if (element % 2 != 0 || even % 2 === 0) {
+    return even;
+  } else {
+    return element;
+  }
+}, 1);
+return result;
 }
 
 module.exports = find_first_even;

@@ -1,7 +1,14 @@
 'use strict';
 
-function calculate_elements_sum(collection, element) {
-  //在这里写入代码
+function find_element_last_subscript(collection, element) {
+  var result = collection.reduceRight(function(pos, currVal, index) {
+    if (index === pos && currVal != element) {
+      return pos - 1;
+    } else {
+      return pos;
+    }
+  }, collection.length-1);
+  return result; 
 }
 
-module.exports = calculate_elements_sum;
+module.exports = find_element_last_subscript;
