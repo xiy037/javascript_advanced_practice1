@@ -1,6 +1,6 @@
 function count_same_elements(collection) {
-  var result = collection.reduce(function (counted, currVal) {
-    var keyArray = counted.map(function (element) {
+  var result = collection.reduce(function(counted, currVal) {
+    var keyArray = counted.map(function(element) {
       return element.key;
     })
     if (!keyArray.includes(currVal)) {
@@ -15,7 +15,7 @@ function count_same_elements(collection) {
 
 function createNewObj(array, item) {
   var newObj = {};
-  newObj.key = item.match(/\w/).toString();
+  newObj.key = item.match(/[a-z]/).toString();
   if (item.match(/\d/)) {
     newObj.count = parseInt(item.match(/\d/));
   } else {

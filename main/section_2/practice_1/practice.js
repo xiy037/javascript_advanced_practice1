@@ -1,15 +1,15 @@
 function count_same_elements(collection) {
-  var result = collection.reduce(function(counted, currVal){
-    var keyArray = counted.map(function(element) {
+  var result = collection.reduce(function (prev, currVal) {
+    var keyArray = prev.map(function (element) {
       return element.key;
-    }) 
+    });
     if (!keyArray.includes(currVal)) {
-      createNewObj(counted, currVal);
+      createNewObj(prev, currVal);
     } else {
-      increaseCount(counted, currVal);
+      increaseCount(prev, currVal);
     }
-    return counted;
-  },[]);
+    return prev;
+  }, []);
   return result;
 }
 
@@ -17,7 +17,8 @@ function createNewObj(array, item) {
   var newObj = {};
   newObj.key = item;
   newObj.count = 1;
-  return array.push(newObj);
+  array.push(newObj);
+  return array;
 }
 
 function increaseCount(arr, item) {

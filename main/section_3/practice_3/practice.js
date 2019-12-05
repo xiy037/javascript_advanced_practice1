@@ -1,15 +1,5 @@
 function create_updated_collection(collection_a, object_b) {
-  var array_c = collection_a.reduce(function(collection_c, currVal){
-    var keyArray = collection_c.map(function(element){
-      return element.key;
-    });
-    if (!keyArray.includes(currVal)) {
-      createNewObj(collection_c, currVal);
-    } else {
-      increaseCount(collection_c, currVal);
-    }
-    return collection_c;
-  }, []);
+  var array_c = createArrayC(collection_a);
   var result = array_c.map(function(obj) {
     if (object_b.value.includes(obj.key)) {
       obj.count -= Math.floor(obj.count / 3);
@@ -18,9 +8,22 @@ function create_updated_collection(collection_a, object_b) {
   });
   return result;
 }
+function createArrayC(array) {
+  return array.reduce(function(prev, currVal) {
+    var keyArray = prev.map(function(element) {
+      return element.key;
+    });
+    if (!keyArray.includes(currVal)) {
+      createNewObj(prev, currVal);
+    } else {
+      increaseCount(prev, currVal);
+    }
+    return prev;
+  }, []);
+}
 
 function createNewObj(array, item) {
-  var newObj ={};
+  var newObj = {};
   newObj.key = item;
   newObj.count = 1;
   return array.push(newObj);

@@ -3,7 +3,7 @@ function count_same_elements(collection) {
     var nameArray = counted.map(function (element) {
       return element.name;
     })
-    var currVal = currStr.match(/\w/).toString();
+    var currVal = currStr.match(/[a-z]/).toString();
     if (!nameArray.includes(currVal)) { 
       createNewObj(counted, currStr);
     } else {
@@ -16,7 +16,7 @@ function count_same_elements(collection) {
 
 function createNewObj(array, item) {
   var newObj = {};
-  newObj.name = item.match(/\w/).toString();
+  newObj.name = item.match(/[a-z]/).toString();
   if (item.match(/\d/)) {
     newObj.summary = parseInt(item.match(/\d/));
   } else {
@@ -27,9 +27,9 @@ function createNewObj(array, item) {
 
 function increaseCount(arr, item) {
   for (var i = 0; i < arr.length; i++) {
-    if (arr[i].name === item.match(/\w/).toString()) {
+    if (arr[i].name === item.match(/[a-z]/).toString()) {
       if (item.match(/\d/)) {
-        arr[i].summary += parseInt((item.match(/\d/g)).join(""));
+        arr[i].summary += parseInt(item.match(/\d+/));
       } else {
         arr[i].summary++;
       }
