@@ -1,13 +1,12 @@
 'use strict';
 
 function amount_even(collection) {
-  var result = collection.reduce(function(sum, element) {
+  return collection.reduce(function(prev, element) {
     if (element % 2 === 0) {
-      sum += element;
+      prev += element;
     }
-    return sum;
+    return prev;
   }, 0);
-  return result;
 }
 
 module.exports = amount_even;

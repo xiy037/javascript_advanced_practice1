@@ -10,15 +10,16 @@ function median_to_letter(collection) {
     median = sorted[(len - 1) / 2];
   }
   var num = Math.ceil(median);
-  var result;
-  if (num > 26) {
-    var char1 = String.fromCharCode(Math.floor(num / 27) + 96);
-    var char2 = String.fromCharCode((num - 1) % 26 + 97);
-    result = char1 + char2;
-  } else {
-    result = String.fromCharCode(num + 96);
-  }
-  return result;
+  return numToLetter(num);
 }
 
+function numToLetter(n) {
+  var quotient = Math.floor((n - 1) / 26);
+  var remainder = (n - 1) % 26;
+  if (quotient === 0) {
+    return String.fromCharCode(remainder + 97);
+  } else {
+    return numToLetter(quotient) + String.fromCharCode(remainder + 97);
+  }
+}
 module.exports = median_to_letter;

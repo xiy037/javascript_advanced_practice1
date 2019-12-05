@@ -1,5 +1,5 @@
 'use strict';
-var single_element = function(collection){
+var single_element = function(collection) {
   var evenPositionArr = collection.filter(function(element, index) {
     return index % 2 === 1;
   });
