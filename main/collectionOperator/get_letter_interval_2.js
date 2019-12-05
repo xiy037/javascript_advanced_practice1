@@ -19,11 +19,30 @@ function convert_to_string(num) {
   if (num <= 26) {
     string = String.fromCharCode(num + 96);
   } else {
-    char1 = String.fromCharCode(Math.floor((num-1)/26) + 96);
-    char2 = String.fromCharCode((num-1) % 26 + 97);
+    char1 = String.fromCharCode(Math.floor((num - 1) / 26) + 96);
+    char2 = String.fromCharCode((num - 1) % 26 + 97);
     string = char1 + char2;
   }
   return string;
 }
+
+
+/* function numToLetter(n) {
+  var quotient = Math.floor((n - 1) / 26);
+  var remainder = (n - 1) % 26;
+  if (quotient === 0) {
+    return String.fromCharCode(remainder + 97);
+  } else if (quotient <= 26) {
+    return String.fromCharCode(quotient + 96) + String.fromCharCode(remainder + 97);
+  } else {
+    return numToLetter(quotient) + String.fromCharCode(quotient + 96) + String.fromCharCode(remainder + 97);
+  }
+    
+  }
+
+  fn = f(n/26) + f(n/26/26) + ...+ f(0) */
+
+
 module.exports = get_letter_interval_2;
+
 
