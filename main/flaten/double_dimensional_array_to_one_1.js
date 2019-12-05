@@ -2,19 +2,19 @@
 //备注部分是不知道是多少维数组的时候，一直抠到最底层。
 function double_to_one(collection) {
   var result = collection.flat();
- /*  while (check_array(result)) {
-    result = result.flat();
-  } */
-  return result;
+  if (!check_array(result)) {
+    return result;
+  } else {
+    return double_to_one(result);
+  }  
 }
 
-/* function check_array(myArray) {
-  var counter = 0;
+function check_array(myArray) {
   for (var i = 0; i < myArray.length; i++) {
-    if (typeof myArray[i] === "object") {
-      counter++;
+    if (Array.isArray(myArray[i])) {
+      return true;
     }  
   }
-  return counter;
-} */
+  return false;
+}
 module.exports = double_to_one;
