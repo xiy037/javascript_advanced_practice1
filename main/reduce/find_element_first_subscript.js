@@ -1,14 +1,12 @@
 'use strict';
 
 function find_element_first_subscript(collection, element) {
-  var result = collection.reduce(function(sum, currVal, index) {
-    if (index === sum && currVal != element) {
-      return sum + 1;
-    } else {
-      return sum;
+  return collection.reduce(function(prev, curr, index) {
+    if (index === prev && curr !== element) {
+      return prev + 1;
     }
+    return prev;
   }, 0);
-  return result; 
 }
 
 module.exports = find_element_first_subscript;

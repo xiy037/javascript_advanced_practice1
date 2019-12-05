@@ -1,14 +1,13 @@
 'use strict';
 
 function find_element_last_subscript(collection, element) {
-  var result = collection.reduceRight(function(pos, currVal, index) {
-    if (index === pos && currVal != element) {
-      return pos - 1;
+  return collection.reduceRight(function(prev, curr, index) {
+    if (index === prev && curr !== element) {
+      return prev - 1;
     } else {
-      return pos;
+      return prev;
     }
-  }, collection.length-1);
-  return result; 
+  }, collection.length - 1);
 }
 
 module.exports = find_element_last_subscript;

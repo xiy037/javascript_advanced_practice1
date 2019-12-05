@@ -1,10 +1,12 @@
 'use strict';
 
 function collect_min_number(collection) {
-  var result = collection.reduce(function(smaller, element) {
-    return smaller = Math.min(smaller, element);
+  return collection.reduce(function(prev, curr) {
+    if (prev > curr) {
+      return prev = curr;
+    }
+    return prev;
   });
-  return result;
 }
 
 module.exports = collect_min_number;

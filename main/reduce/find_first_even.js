@@ -1,14 +1,12 @@
 'use strict';
 
 function find_first_even(collection) {
-var result = collection.reduce(function(even, element) {
-  if (element % 2 != 0 || even % 2 === 0) {
-    return even;
-  } else {
-    return element;
+return collection.reduce(function(prev, curr) {
+  if (curr % 2 !== 0 || prev % 2 === 0) {
+    return prev;
   }
-}, 1);
-return result;
+  return curr;
+});
 }
 
 module.exports = find_first_even;

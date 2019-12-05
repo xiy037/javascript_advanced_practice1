@@ -1,10 +1,9 @@
 'use strict';
 
 function calculate_elements_sum(collection) {
-  var result = collection.reduce(function(sum, currentVal) { 
-    return sum += currentVal;
+  return collection.reduce(function(prev, curr) { 
+    return prev += curr;
   });
-  return result;
 }
 
 module.exports = calculate_elements_sum;
