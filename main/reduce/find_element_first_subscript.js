@@ -1,7 +1,7 @@
 'use strict';
 
 function find_element_first_subscript(collection, element) {
-  return collection.reduce(function(prev, curr, index) {
+  return collection.reduce(function (prev, curr, index) {
     if (index === prev && curr !== element) {
       return prev + 1;
     }

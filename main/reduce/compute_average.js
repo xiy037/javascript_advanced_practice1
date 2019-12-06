@@ -1,7 +1,7 @@
 'use strict';
 
 function compute_average(collection) {
-  return collection.reduce(function(prev, curr, index) {
+  return collection.reduce(function (prev, curr, index) {
     return prev = (prev * index + curr) / (index + 1);
   });
 }

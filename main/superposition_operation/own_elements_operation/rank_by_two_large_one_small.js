@@ -25,7 +25,7 @@ function groupByThree(array) {
   return groupObj;
 }
 function orderItems(array) {
-  return array.map(function(element) {
+  return array.map(function (element) {
     if (element.length > 2) {
       for (var i = 0; i < element.length - 1; i++) {
         if (element[i] < element[i + 1]) {

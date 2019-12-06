@@ -8,14 +8,14 @@ function grouping_count(collection) {
   }
   for (var j = 0; j < collection.length; j++) {
     if (filtered.includes(collection[j])) {
-    result[collection[j]] = result[collection[j]] + 1;
+      result[collection[j]] = result[collection[j]] + 1;
     }
   }
   return result;
 }
 
 function filterNoRepeatNum(array) {
-  return array.filter(function(element, index, self){
+  return array.filter(function (element, index, self) {
     return self.indexOf(element) === index;
   });
 }

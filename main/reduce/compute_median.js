@@ -2,7 +2,7 @@
 
 function compute_median(collection) {
   var result;
-  var sortedArray = collection.sort(function(a, b) {return a - b});
+  var sortedArray = collection.sort(function (a, b) { return a - b });
   var len = sortedArray.length;
   if (len % 2 === 0) {
     result = (sortedArray[len / 2 - 1] + sortedArray[len / 2]) / 2;

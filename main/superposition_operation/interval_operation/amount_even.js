@@ -1,7 +1,7 @@
 'use strict';
 
 function amount_even(collection) {
-  return collection.reduce(function(prev, element) {
+  return collection.reduce(function (prev, element) {
     if (element % 2 === 0) {
       prev += element;
     }

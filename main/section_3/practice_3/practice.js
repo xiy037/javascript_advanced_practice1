@@ -1,6 +1,6 @@
 function create_updated_collection(collection_a, object_b) {
   var array_c = createArrayC(collection_a);
-  var result = array_c.map(function(obj) {
+  var result = array_c.map(function (obj) {
     if (object_b.value.includes(obj.key)) {
       obj.count -= Math.floor(obj.count / 3);
     }
@@ -9,8 +9,8 @@ function create_updated_collection(collection_a, object_b) {
   return result;
 }
 function createArrayC(array) {
-  return array.reduce(function(prev, currVal) {
-    var keyArray = prev.map(function(element) {
+  return array.reduce(function (prev, currVal) {
+    var keyArray = prev.map(function (element) {
       return element.key;
     });
     if (!keyArray.includes(currVal)) {

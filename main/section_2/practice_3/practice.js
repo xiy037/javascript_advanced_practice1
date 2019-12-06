@@ -4,7 +4,7 @@ function count_same_elements(collection) {
       return element.name;
     })
     var currVal = currStr.match(/[a-z]/).toString();
-    if (!nameArray.includes(currVal)) { 
+    if (!nameArray.includes(currVal)) {
       createNewObj(counted, currStr);
     } else {
       increaseCount(counted, currStr);

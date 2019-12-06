@@ -1,7 +1,7 @@
 'use strict';
 
 function collect_min_number(collection) {
-  return collection.reduce(function(prev, curr) {
+  return collection.reduce(function (prev, curr) {
     if (prev > curr) {
       return prev = curr;
     }

@@ -1,6 +1,6 @@
 function count_same_elements(collection) {
-  var result = collection.reduce(function(counted, currVal) {
-    var keyArray = counted.map(function(element) {
+  var result = collection.reduce(function (counted, currVal) {
+    var keyArray = counted.map(function (element) {
       return element.key;
     })
     if (!keyArray.includes(currVal)) {

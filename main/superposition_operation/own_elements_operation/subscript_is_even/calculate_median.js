@@ -1,6 +1,6 @@
 'use strict';
-var calculate_median = function(collection){
-  var evenPosition = collection.filter(function(element, index) {
+var calculate_median = function (collection) {
+  var evenPosition = collection.filter(function (element, index) {
     return index % 2 === 1;
   });
   var len = evenPosition.length;

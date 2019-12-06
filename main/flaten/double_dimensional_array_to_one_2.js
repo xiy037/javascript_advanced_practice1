@@ -3,7 +3,7 @@
 function double_to_one(collection) {
   var result = collection.flat();
   if (!check_array(result)) {
-    return result.filter(function(element, index, self) {
+    return result.filter(function (element, index, self) {
       return self.indexOf(element) === index;
     });
   } else {

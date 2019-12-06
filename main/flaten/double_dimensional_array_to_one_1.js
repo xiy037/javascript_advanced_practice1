@@ -6,14 +6,14 @@ function double_to_one(collection) {
     return result;
   } else {
     return double_to_one(result);
-  }  
+  }
 }
 
 function check_array(myArray) {
   for (var i = 0; i < myArray.length; i++) {
     if (Array.isArray(myArray[i])) {
       return true;
-    }  
+    }
   }
   return false;
 }

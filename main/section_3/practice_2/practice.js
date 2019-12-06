@@ -1,5 +1,5 @@
 function create_updated_collection(collection_a, object_b) {
-  var result = collection_a.map(function(element) {
+  var result = collection_a.map(function (element) {
     if (object_b.value.includes(element.key)) {
       element.count -= Math.floor(element.count / 3);
     }
